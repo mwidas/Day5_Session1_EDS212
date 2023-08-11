@@ -1,7 +1,37 @@
 ---
 title: "Day5_Session1"
-format: html
+format: 
+  html: 
+    code-fold: true
+    code-summary: "show me the code!"
 editor: visual
+execute: 
+  warning: false
 ---
 
-## 
+```{r}
+library(tidyverse)
+```
+
+## Explore Star Wars data set
+
+-   look at the first 6 lines of starwars
+
+-   find the dimensions of starwars
+
+-   make a histogram of character heights
+
+-   make a scatterplot of height vs weight
+
+```{r}
+head(starwars)
+
+dim(starwars)
+
+ggplot(data = starwars, aes(x = height)) +
+  geom_histogram()
+
+# put dependent variable on y-axis
+ggplot(data =starwars, aes(x = height, y = mass)) +
+  geom_point()
+```
