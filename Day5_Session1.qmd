@@ -23,6 +23,8 @@ library(tidyverse)
 
 -   make a scatterplot of height vs weight
 
+-   stage, commit, push! Check and see changes are safely stored
+
 ```{r}
 head(starwars)
 
@@ -32,6 +34,34 @@ ggplot(data = starwars, aes(x = height)) +
   geom_histogram()
 
 # put dependent variable on y-axis
+# having data points colored by sex
 ggplot(data =starwars, aes(x = height, y = mass)) +
-  geom_point()
+  geom_point(aes(color = sex))
+```
+
+## Summary Statistic Practice
+
+-   in console run starwars\$height to show all data points in that column
+
+-   in console run class(starwars\$height) to show type of data for height column
+
+-   use mean() function to find means
+
+-   use sd() function to find standard deviations
+
+    ```{r}
+    # store and calculate the mean of height column
+    mean_height <- mean(starwars$height)
+    # show me what mean_height is = NA; we have missing values in this vector so it will show na
+    mean_height
+    #lets fix it to strip na values before calculation
+    mean_height <- mean(starwars$height, na.rm = TRUE)
+
+    mean_height
+    ```
+
+```{r}
+sd_height <- sd(starwars$height, na.rm = TRUE)
+
+sd_height
 ```
