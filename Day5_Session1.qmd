@@ -65,3 +65,9 @@ sd_height <- sd(starwars$height, na.rm = TRUE)
 
 sd_height
 ```
+
+## In-line reporting using code outputs
+
+when you just type values in you are disconnecting it from the data in case it ever changed or if you make a mistake - to tie it to a variable use \`\`
+
+The mean height of star wars characters is `r mean_height` cm with a `r sd_height` cm.
